@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var Dolphins =[100, 54, 41]
+    var Koalas = [23, 34, 27]
+    var calcAverage = function(arr){
+        return arr.reduce((par,a) =>{
+            return (par+a)/arr.length
+        })
+    }
+    var avgDolphins = calcAverage(Dolphins)
+    var avgKoalas = calcAverage(Koalas)
+    console.log(avgDolphins)
+    console.log(avgKoalas)
+    var checkWinner = function (avg1, avg2){
+        if (avg1 > avg2*2){
+            return 1
+        } 
+        else if (avg1*2 < avg2){
+            return 2
+        }
+    }
+    if(checkWinner(avgDolphins, avgKoalas)==1){
+        console.log("Dolphins win ("+avgDolphins+" vs. "+avgKoalas+")")
+    }
+    else if(checkWinner(avgDolphins, avgKoalas)==2){
+        console.log("Koalas win ("+avgDolphins+" vs. "+avgKoalas+")")
+    }
+
+</script>
+<body>
+    
+</body>
+</html>
